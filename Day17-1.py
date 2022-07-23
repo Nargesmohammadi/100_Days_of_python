@@ -40,4 +40,5 @@ user_two.follow(user_one)
 print(user_one.followers)
 print(user_one.following)
 print(user_two.followers)
+
 print(user_two.following)
