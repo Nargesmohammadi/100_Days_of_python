@@ -24,4 +24,3 @@ print(user_one.id)
 user_two = User("002", "Mina")
 print(user_two.username)
 print(user_one.followers)
-
