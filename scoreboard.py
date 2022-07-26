@@ -1,2 +1,2 @@
-class Snake:
+class :
     def __init__(self, ):
