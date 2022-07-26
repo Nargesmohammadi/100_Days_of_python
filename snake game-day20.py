@@ -7,7 +7,16 @@ screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("My snake game")
 screen.tracer(0)
+
 snake = Snake()
+
+screen.listen()
+
+screen.onkey(snake.snake_up, "Up")
+screen.onkey(snake.snake_down, "Down")
+screen.onkey(snake.snake_right, "Right")
+screen.onkey(snake.snake_left, "Left")
+
 # create a snake body
 
 # snake_positions = [(0, 0), (-20, 0), (-40, 0)]
@@ -22,8 +31,6 @@ snake = Snake()
 # snake.goto(x=snake_x_positions[snake_index], y=0)
 # snake.goto(positions)
 # segments.append(snake)
-
-
 
 game_is_on = True
 
