@@ -8,6 +8,7 @@ DOWN = 270
 RIGHT = 0
 LEFT = 180
 
+
 class Snake:
     def __init__(self):
         self.segments = []
@@ -17,11 +18,18 @@ class Snake:
 
     def create_snake(self):
         for positions in SNAKE_POSITIONS:
-            snake = Turtle("square")
-            snake.color("white")
-            snake.penup()
-            snake.goto(positions)
-            self.segments.append(snake)
+            self.add_segment(positions)
+
+    def add_segment(self, positions):
+        snake = Turtle("square")
+        snake.color("white")
+        snake.penup()
+        snake.goto(positions)
+        self.segments.append(snake)
+
+    def extend(self):
+        # add a new segment to snake.
+        self.add_segment(self.segments[-1].position())
 
     def move_snake(self):
         for seg_num in range(len(self.segments) - 1, 0, -1):
@@ -31,7 +39,7 @@ class Snake:
         # self.segments[0].forward(MOVE_DISTANCE)
         self.head.forward(MOVE_DISTANCE)
 
-# add methods for control the snake with keypress
+    # add methods for control the snake with keypress
 
     def snake_up(self):
         # self.segments[0].setheading(90)
@@ -49,4 +57,3 @@ class Snake:
     def snake_left(self):
         if self.head.heading() != RIGHT:
             self.head.setheading(LEFT)
-
